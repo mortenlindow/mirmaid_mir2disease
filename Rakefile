@@ -3,6 +3,8 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 require 'sdoc'
 
+# rake version:bump:major/minor/patch
+# rake gemspec
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
