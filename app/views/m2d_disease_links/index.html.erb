@@ -1,0 +1,18 @@
+<div id="col-top"></div>
+<div id="col">
+
+<h3>Listing Diseases</h3>
+
+<%= will_paginate @m2d_disease_links, :params => params %>
+
+<% if !@m2d_disease_links.empty? %>
+<table class="search">
+  <tr><th>Disease link</th><th>miRNA</th><th>Disease</th><th>Pubmed ID</th><th>Expression</th><th>Method</th><th>Genes</th><tr>
+  <%= render @m2d_disease_links %>
+</table>
+<% end %>
+
+Plugin based on data from <a href="http://www.mir2disease.org">miR2Disease</a>.
+
+</div> <!-- /col -->
+<div id="col-bottom"></div>

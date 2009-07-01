@@ -1,0 +1,21 @@
+<div id="col-top"></div>    
+<div id="col" class="box">
+
+Disease link between <%= link_to @m2d_disease_link.mature.name, mature_path(@m2d_disease_link.mature) %> and <%= link_to @m2d_disease_link.m2d_disease.name, m2d_disease_path(@m2d_disease_link.m2d_disease) %>.
+
+<table>
+  <tr><th align=left>miRNA ID (from miR2Disease)</th><td><%= @m2d_disease_link.mirna %></td></tr>
+  <tr><th align=left>Expression</th><td><%= @m2d_disease_link.expression %></td></tr>
+  <tr><th align=left>Method</th><td><%= @m2d_disease_link.method %></td></tr>
+  <tr><th align=left>Description</th><td><%= @m2d_disease_link.description %></td></tr>
+  <tr><th align=left>Reference (Pubmed ID)</th><td><%= link_to @m2d_disease_link.pmid, "http://www.ncbi.nlm.nih.gov/pubmed/#{@m2d_disease_link.pmid}" %></td></tr>
+  <tr><th align=left>Year</th><td><%= @m2d_disease_link.year %></td></tr>
+  <tr><th align=left>Genes</th><td><%= @m2d_disease_link.genes %></td></tr>
+  <tr><th align=left>Causal</th><td><%= @m2d_disease_link.causal %></td></tr>
+</table>
+
+Plugin based on data from <a href="http://www.mir2disease.org">miR2Disease</a>.
+
+</div> <!-- /col -->
+<div id="col-bottom"></div>
+

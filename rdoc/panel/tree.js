@@ -1,0 +1,1 @@
+var tree = [["M2dDisease","classes\/M2dDisease.html"," < ActiveRecord::Base",[]],["M2dDiseaseLink","classes\/M2dDiseaseLink.html"," < ActiveRecord::Base",[]],["M2dDiseaseLinksController","classes\/M2dDiseaseLinksController.html"," < ApplicationController",[]],["M2dDiseasesController","classes\/M2dDiseasesController.html"," < ApplicationController",[]]]

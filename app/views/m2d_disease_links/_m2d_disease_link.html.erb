@@ -1,0 +1,9 @@
+<tr class="<%= cycle("even","odd") %>">
+  <td><%= link_to "details ...", m2d_disease_link_path(m2d_disease_link) %></td>
+  <td><%= link_to m2d_disease_link.mature.name, mature_path(m2d_disease_link.mature) %></td>
+  <td><%= link_to m2d_disease_link.m2d_disease.name, m2d_disease_path(m2d_disease_link.m2d_disease) %></td>
+  <td><%= link_to m2d_disease_link.pmid, "http://www.ncbi.nlm.nih.gov/pubmed/#{m2d_disease_link.pmid}" %></td>
+  <td><%= m2d_disease_link.expression %></td>
+  <td><%= m2d_disease_link.method %></td>
+  <td><%= m2d_disease_link.genes %></td>
+</tr>

@@ -1,0 +1,21 @@
+
+<p>Disease links registered in <a href="http://www.mir2disease.org">miR2Disease</a> for mature miRNA.</p>
+<% if !list_for_mature.empty? %>
+<table class="search">
+<tr><th>Disease link</th><th>Disease</th><th>Pubmed ID</th><th>Expression</th><th>Method</th><th>Genes</th><tr>
+
+<% list_for_mature.sort_by{|x| x.m2d_disease_id}.each do |m2d_disease_link| %>
+
+<tr class="<%= cycle("even","odd") %>">
+  <td><%= link_to "details ...", m2d_disease_link_path(m2d_disease_link) %></td>
+  <td><%= link_to m2d_disease_link.m2d_disease.name, m2d_disease_path(m2d_disease_link.m2d_disease) %></td>
+  <td><%= link_to m2d_disease_link.pmid, "http://www.ncbi.nlm.nih.gov/pubmed/#{m2d_disease_link.pmid}" %></td>
+  <td><%= m2d_disease_link.expression %></td>
+  <td><%= m2d_disease_link.method %></td>
+  <td><%= m2d_disease_link.genes %></td>
+</tr>
+
+<% end %>
+
+</table>
+<% end %>

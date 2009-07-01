@@ -1,0 +1,25 @@
+<div id="col-top"></div>    
+<div id="col" class="box">
+
+<table>
+  <tr><th align=left>DOID</th><td><%= @m2d_disease.doid %></td></tr>
+  <tr><th align=left>Name</th><td><%= @m2d_disease.name %></td></tr>
+</table>
+
+
+<!-- render disease links here ... -->
+<div class="infobox">
+<h4><%= link_to_function "Disease links [#{@m2d_disease.m2d_disease_links.size}]", visual_effect(:toggle_blind,'disease_links',:duration=>0.2)  %></h4>
+<div id="disease_links" style="">
+<% if !@m2d_disease.m2d_disease_links.empty? %>
+<table class="search">
+  <tr><th>Disease link</th><th>miRNA</th><th>Disease</th><th>Pubmed ID</th><th>Expression</th><th>Method</th><th>Genes</th><tr>
+  <%= render @m2d_disease.m2d_disease_links.sort_by{|x| x.mirna} %>
+</table>
+<% end %>
+</div></div>
+
+Plugin based on data from <a href="http://www.mir2disease.org">miR2Disease</a>.
+
+</div> <!-- /col -->
+<div id="col-bottom"></div>
