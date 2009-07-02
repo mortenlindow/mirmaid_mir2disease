@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anders Jacobsen"]
-  s.date = %q{2009-07-01}
+  s.date = %q{2009-07-02}
   s.description = %q{TODO}
   s.email = %q{andersmbj@gmail.com}
   s.extra_rdoc_files = [
@@ -32,9 +32,11 @@ Gem::Specification.new do |s|
      "data/mir2dis.txt",
      "init.rb",
      "install.rb",
-     "lib/mir2disease.rb",
+     "lib/mirmaid_ext.rb",
+     "lib/mirmaid_mir2disease.rb",
+     "lib/mirmaid_plugin_tasks/mir2disease_tasks.rake",
      "mirmaid_mir2disease.gemspec",
-     "mirmaid_models.rb",
+     "rails/init.rb",
      "rdoc/classes/M2dDisease.html",
      "rdoc/classes/M2dDiseaseLink.html",
      "rdoc/classes/M2dDiseaseLinksController.html",
