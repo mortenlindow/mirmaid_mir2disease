@@ -16,10 +16,6 @@ namespace :mirmaid do
   namespace :plugin do
     namespace :mir2disease do
 
-      task :test do
-        puts "this is a test!!!"
-      end        
-
       desc "create plugin schema"
       task :create_schema => :environment do
         ActiveRecord::Migration.verbose = false
@@ -102,8 +98,7 @@ namespace :mirmaid do
             next
           end
           
-          # look up disease - create if new
-          
+          # look up disease - create if new      
           disease = M2dDisease.find_or_create_by_doid(r[col['DOID']].to_i) {|d| d.name = r[col['Disease']]}
           next if disease.nil?
           
@@ -130,8 +125,15 @@ namespace :mirmaid do
         puts "finished loading, skipped #{skipped_rows}/#{rows.size} unparsable entries"
         
       end
+
+      desc "mir2disease unit tests"
+      Rake::TestTask.new(:test => :environment) do |t|
+        t.libs << plugin_root+'/lib'
+        t.libs << plugin_root+'/test'
+        t.pattern = plugin_root+'/test/**/*_test.rb'
+        t.verbose = false
+      end
       
     end
   end
 end
-
